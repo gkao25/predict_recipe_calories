@@ -22,7 +22,7 @@ We chose this as the variable because it represents the number of calories in a 
 
 **Evaluation Metrics**: We will use RMSE to measure how fit the linear regression model is, and $R^2$ as our evaluation metrics to measure the strength of the relationship. 
 
-A look at the cleaned dataset. 
+A look at the cleaned dataset that contains only the calories and nutritional valus of a recipe. All columns are numerical (quantitative).
 
 |    |   calories (#) |   total fat (PDV) |   sugar (PDV) |   sodium (PDV) |   protein (PDV) |   saturated fat (PDV) |   carbohydrates (PDV) |
 |---:|---------------:|------------------:|--------------:|---------------:|----------------:|----------------------:|----------------------:|
@@ -48,9 +48,9 @@ To generalize the model to unseen data, we have done a train-test split. The mod
 
 # Final Model
 
-We added two new features, `protein (PDV)` and `carbohydrates (PDV)`, so now we have a total of four quantitative features. From the previous scatter matrix, both protein and carbohydrates display positive correlations to calories, so we believe they would improve our model's performance. Furthermore, from common knowledge, recipes like steak and bread are high in calories, which are proteins and carbohydrates, respectively. 
+We added two new features, `protein (PDV)` and `carbohydrates (PDV)`, so now we have a total of four quantitative features. From the previous scatter matrix, both protein and carbohydrates display positive correlations to calories, so we believe they would improve our model's performance. Furthermore, from common knowledge we know that recipes like steak and bread are high in calories, which are protein and carbohydrate, respectively. 
 
-The modeling algorithm involves setting the `y` variable as calories, and all other variable as `X`. Because our model is a normal linear regression, we did not tune for any hyperparameters. We standardized the four quantitative features, `total fat (PDV)`, `sugar (PDV)`, `protein (PDV)`, and `carbohydrates (PDV)`, and left the rest untouched. 
+The modeling algorithm involves setting the `y` variable as calories, and all other variable as `X`. Because our model is a standard linear regression (i.e. OLS), we did not tune for any hyperparameters. We standardized the four quantitative features `total fat (PDV)`, `sugar (PDV)`, `protein (PDV)`, and `carbohydrates (PDV)` in a Pipeline, and left the rest untouched. 
 
 Similar to the baseline model, we have done a train-test split to generalize the final model to unseen data. The training set evaluates to an RMSE of 38.810 and a $R^2$ of 0.995. The test set evaluates to an RMSE of 36.257 and a $R^2$ or 0.995. Compared to the baseline model's performance, both RMSE and $R^2$ improved significantly. 
 
