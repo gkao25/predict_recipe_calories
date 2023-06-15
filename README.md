@@ -20,7 +20,7 @@ We chose this as the variable because it represents the number of calories in a 
 
 **Model**: We will use linear regression model because the response variable is numerical.
 
-**Evaluation Metrics**: We will use RMSE to measure how fit the linear regression model is, and $R^2$ as our evaluation metrics to measure the strength of the relationship. 
+**Evaluation Metrics**: We will use RMSE to measure how fit the linear regression model is, and R^2 as our evaluation metrics to measure the strength of the relationship. 
 
 A look at the cleaned dataset that contains only the calories and nutritional valus of a recipe. All columns are numerical (quantitative).
 
@@ -43,7 +43,7 @@ There seem to be positive correlations between calories/total fat, calories/suga
 
 We're using a normal linear regressio model to predict the calories. The baseline model will have two features, `total fat (PDV)` and `sugar (PDV)`. Both of them are quantitative features and not transformed. 
 
-To generalize the model to unseen data, we have done a train-test split. The model is `fit` on a training set only, and evaluates to an RMSE of 195.505 and a $R^2$ of 0.887. The test set evaluates to an RMSE of 198.644 and a $R^2$ or 0.884. RMSE is the error of our prediction, and $R^2$ is the coefficient of determination which describes the quality of a linear fit. The baseline model is pretty good because $R^2$ is high, but the RMSE is also high, which leads us to believe that the model can be improved to lower the error. 
+To generalize the model to unseen data, we have done a train-test split. The model is `fit` on a training set only, and evaluates to an RMSE of 195.505 and a R^2 of 0.887. The test set evaluates to an RMSE of 198.644 and a R^2 or 0.884. RMSE is the error of our prediction, and R^2 is the coefficient of determination which describes the quality of a linear fit. The baseline model is pretty good because R^2 is high, but the RMSE is also high, which leads us to believe that the model can be improved to lower the error. 
 
 
 # Final Model
@@ -52,7 +52,7 @@ We added two new features, `protein (PDV)` and `carbohydrates (PDV)`, so now we 
 
 The modeling algorithm involves setting the `y` variable as calories, and all other variable as `X`. Because our model is a standard linear regression (i.e. OLS), we did not tune for any hyperparameters. We standardized the four quantitative features `total fat (PDV)`, `sugar (PDV)`, `protein (PDV)`, and `carbohydrates (PDV)` in a Pipeline, and left the rest untouched. 
 
-Similar to the baseline model, we have done a train-test split to generalize the final model to unseen data. The training set evaluates to an RMSE of 38.810 and a $R^2$ of 0.995. The test set evaluates to an RMSE of 36.257 and a $R^2$ or 0.995. Compared to the baseline model's performance, both RMSE and $R^2$ improved significantly. 
+Similar to the baseline model, we have done a train-test split to generalize the final model to unseen data. The training set evaluates to an RMSE of 38.810 and a R^2 of 0.995. The test set evaluates to an RMSE of 36.257 and a R^2 or 0.995. Compared to the baseline model's performance, both RMSE and R^2 improved significantly. 
 
 
 # Fairness Analysis
